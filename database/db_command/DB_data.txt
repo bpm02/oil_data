@@ -1,0 +1,522 @@
+# tabel 分け方
+period value 
+area
+product
+process
+series
+units
+
+
+mysql
+area_name
+
+
+
+
+
+
+$area_data = [
+    [
+        "id" => 1,
+        "duoarea" => "NUS",
+        "area_name" => "U.S.",
+
+    ],
+    [
+        "id" => 2,
+        "duoarea" => "R10",
+        "area_name" => "PADD 1",
+
+    ],
+    [
+        "id" => 3,
+        "duoarea" => "R1X",
+        "area_name" => "PADD 1A",
+
+    ],
+        [
+        "id" => 4,
+        "duoarea" => "R1Y",
+        "area_name" => "PADD 1B",
+
+    ],
+        [
+        "id" => 5,
+        "duoarea" => "R1Z",
+        "area_name" => "PADD 1C",
+
+    ], 
+        [
+        "id" => 6,
+        "duoarea" => "R20",
+        "area_name" => "PADD 2",
+
+    ],
+    [
+        "id" => 7,
+        "duoarea" => "R30",
+        "area_name" => "PADD 3",
+
+    ],
+        [
+        "id" => 8,
+        "duoarea" => "R40",
+        "area_name" => "PADD 4",
+
+    ],
+        [
+        "id" => 9,
+        "duoarea" => "R4N5",
+        "area_name" => "NA",
+
+    ],    
+            [
+        "id" => 10,
+        "duoarea" => "R50",
+        "area_name" => "PADD 5",
+
+    ],
+        [
+        "id" => 11,
+        "duoarea" => "YCUOK",
+        "area_name" => "NA",
+
+    ],     
+];
+
+
+$product_data = [
+    [
+        "id" => 1,
+        "product" => "EP00",
+        "product_name" => "Crude Oil and Petroleum Products",
+
+    ],
+    [
+        "id" => 2,
+        "product" => "EPC0",
+        "product_name" => "Crude Oil",
+
+    ],
+    [
+        "id" => 3,
+        "product" => "EPD0",
+        "product_name" => "Distillate Fuel Oil",
+    ],
+        [
+        "id" => 4,
+        "product" => "EPD00H",
+        "product_name" => "DIstillage Fuel Oil, Greater than 500 ppm sulfur",
+
+    ],
+    [
+        "id" => 5,
+        "product" => "EPDM10",
+        "product_name" => "DIstillage Fuel Oil, Greater than 15 to 500 ppm sulfur",
+
+    ],
+    [
+        "id" => 6,
+        "product" => "EPDXL0",
+        "product_name" => "DIstillage Fuel Oil, 0 to 15 ppm Sulfur",
+    ],
+        [
+        "id" => 7,
+        "product" => "EPJK",
+        "product_name" => "Kerosene-Type Jet Fuel",
+
+    ],
+    [
+        "id" => 8,
+        "product" => "EPL0XP",
+        "product_name" => "NGPLs/LRGs (Excluding Propane/Propylene",
+
+    ],
+    [
+        "id" => 9,
+        "product" => "EPLLPYN",
+        "product_name" => "Propylen NonFuel Use",
+    ],
+        [
+        "id" => 10,
+        "product" => "EPPLLPZ",
+        "product_name" => "Propane and Propylene",
+
+    ],
+    [
+        "id" => 11,
+        "product" => "EPM0",
+        "product_name" => "Total gasoline",
+
+    ],
+    [
+        "id" => 12,
+        "product" => "EPM0C",
+        "product_name" => "Conventional Motor Gasoline",
+    ],
+       [
+        "id" => 13,
+        "product" => "EPM0CA",
+        "product_name" => "Conventional Moter Gasoline with Alcohol",
+
+    ],
+    [
+        "id" => 14,
+        "product" => "EPM0CAG55",
+        "product_name" => "Finished Motor Gasoline Conventional>55",
+
+    ],
+    [
+        "id" => 15,
+        "product" => "EPM0CO",
+        "product_name" => "Other Conventional Motor Gasoline",
+    ],
+        [
+        "id" => 16,
+        "product" => "EPM0F",
+        "product_name" => "Finished Motor Gasoline",
+
+    ],
+    [
+        "id" => 17,
+        "product" => "EPM0R",
+        "product_name" => "Reformulated Motor Gasoline",
+
+    ],
+    [
+        "id" => 18,
+        "product" => "EPM0RA",
+        "product_name" => "Reformulated Motor Gasoline with Alcohol",
+    ],
+        [
+        "id" => 19,
+        "product" => "EPOBG",
+        "product_name" => "Gasoline Blending Components",
+
+    ],
+    [
+        "id" => 20,
+        "product" => "EPOBGCC",
+        "product_name" => "Conventional CBOB Gasoline Blending Components",
+
+    ],
+    [
+        "id" => 21,
+        "product" => "EPOBGCG",
+        "product_name" => "Conventional GTAB Gasoline Blending Components",
+    ],
+        [
+        "id" => 22,
+        "product" => "EPOGBCO",
+        "product_name" => "Conventional Other Gasoine Blending Components",
+
+    ],
+    [
+        "id" => 23,
+        "product" => "EPOBGRG",
+        "product_name" => "Reformulated GTAB Gasoline Blending Components",
+
+    ],
+    [
+        "id" => 24,
+        "product" => "EPOBGRR",
+        "product_name" => "Motor Gasoline Blending Components Reformulated RBOB",
+    ],
+        [
+        "id" => 25,
+        "product" => "EPOBGRRA",
+        "product_name" => "Reformulated RBOB with Alcohol Gasoline Blending Components",
+    ],
+        [
+        "id" => 26,
+        "product" => "EPOBGRRE",
+        "product_name" => "Reformulated RBOB with Either Gasoline Blending Components",
+
+    ],
+    [
+        "id" => 27,
+        "product" => "EPOOXE",
+        "product_name" => "Fuel Ethanol",
+
+    ],
+    [
+        "id" => 28,
+        "product" => "EPPA",
+        "product_name" => "Asphalt and Road Oil",
+    ],
+            [
+        "id" => 29,
+        "product" => "EPPK",
+        "product_name" => "Kerosene",
+    ],
+        [
+        "id" => 30,
+        "product" => "EPPO6",
+        "product_name" => "Other Oils (Excluding Fuel Ethanol)",
+
+    ],
+    [
+        "id" => 31,
+        "product" => "EPPR",
+        "product_name" => "Residual Fuel Oil",
+
+    ],
+    [
+        "id" => 32,
+        "product" => "EPPU",
+        "product_name" => "Unfinished Oils",
+    ],
+];
+
+$process_data = [
+    [
+        "id" => 1,
+        "process" => "SAE",
+        "process_name" => "Ending Stocks",
+    ],
+        [
+        "id" => 2,
+        "process" => "SAS",
+        "process_name" => "Ending Stocks SPR",
+    ],
+        [
+        "id" => 3,
+        "process" => "SAX",
+        "process_name" => "Ending Stocks Excluding SPR",
+    ],
+        [
+        "id" => 4,
+        "process" => "SAXL",
+        "process_name" => "Ending Stocks Excluding SPR and Lease",
+    ],
+        [
+        "id" => 5,
+        "process" => "SAXP",
+        "process_name" => "Ending Stocks Excluding Propylene at Terminal",
+    ],
+        [
+        "id" => 6,
+        "process" => "SKA",
+        "process_name" => "Stocks In Transit (on Ships) from Alaska)",
+    ],
+        [
+        "id" => 7,
+        "process" => "SKB",
+        "process_name" => "Stocks at Bulk Terminal",
+    ],
+];
+
+        $units_data = [
+            'id' => 1,
+            'units' => 'MBBL',
+        ];
+
+        $duoarea_arr = array(
+            "NUS" => 1,
+            "R10" => 2,
+            "R1X" => 3,
+            "R1Y" => 4,
+            "R1Z" => 5,
+            "R20" => 6,
+            "R30" => 7,
+            "R40" => 8,
+            "R4N5" => 9,
+            "R50"  => 10,
+            "YCUOK" => 11,
+        );
+
+        $area_name_arr = array(
+            "U.S." => 1,
+            "PADD 1" => 2,
+            "PADD 1A" => 3,
+            "PADD 1B" => 4,
+            "PADD 1C" => 5,
+            "PADD 2" => 6,
+            "PADD 3" => 7,
+            "PADD 4" => 8,
+            "NA" => 9,
+            "PADD 5" => 10,
+            "NA" => 11,
+        );
+
+        $product_arr = array(
+            "EPM0" => 1,
+            "SAE" => 2,
+            "EPD0" => 3,
+            "EPD00H" => 4,
+            "EPDM10" => 5,
+            "EPDXL0" => 6,
+            "EPJK" => 7,
+            "EPL0XP" => 8,
+            "EPLLPYN" => 9,
+            "EPLLPZ" => 10,
+            "EPM0"  => 11,
+            "EPM0C" => 12,
+            "EPM0CA" => 13,
+            "EPM0CAG55" => 14,
+            "EPM0CO" => 15,
+            "EPM0F" => 16,
+            "EPM0R" => 17,
+            "EPM0RA"    =>  18,
+            "EPOBG" => 19,
+            "EPOBGCC" =>    20,
+            "EPOBGCG" => 21,
+            "EPOBGCO" => 22,
+            "EPOBGRG"   => 23,
+            "EPOBGRR" => 24,
+            "EPOBGRRA" => 25,
+            "EPOBGRRE" => 26,
+            "EPOOXE" => 27,
+            "EPPA" => 28,
+            "EPPK" => 29,
+            "EPPO6" => 30,
+            "EPPR" => 31,
+            "EPPU" => 32,
+        );
+
+        $product_name_arr = array(
+            "Crude Oil and Petroleum Products" => 1,
+            "Crude Oil" => 2,
+            "Distillate Fuel Oil" => 3,
+            "DIstillage Fuel Oil, Greater than 500 ppm sulfur" => 4,
+            "DIstillage Fuel Oil, Greater than 15 to 500 ppm sulfur" => 5,
+            "DIstillage Fuel Oil, 0 to 15 ppm Sulfur" => 6,
+            "Kerosene-Type Jet Fuel"    => 7,
+            "NGPLs/LRGs (Excluding Propane/Propylene"       => 8,
+            "Propylen NonFuel Use" => 9,
+            "Propane and Propylene"     => 10,
+            "Total gasoline" => 11,
+            "Conventional Motor Gasoline" => 12,
+            "Conventional Moter Gasoline with Alcohol" => 13,
+            "Finished Motor Gasoline Conventional>55" => 14,
+            "Other Conventional Motor Gasoline" => 15,
+            "Finished Motor Gasoline" => 16,
+            "Reformulated Motor Gasoline" => 17,
+            "Reformulated Motor Gasoline with Alcohol" => 18,
+            "Gasoline Blending Components"  => 19,
+            "Conventional CBOB Gasoline Blending Components" => 20,
+            "Conventional GTAB Gasoline Blending Components" => 21,
+            "Conventional Other Gasoine Blending Components" => 22,
+            "Reformulated GTAB Gasoline Blending Components" => 23,
+            "Motor Gasoline Blending Components Reformulated RBOB" => 24,
+            "Reformulated RBOB with Alcohol Gasoline Blending Components"   => 25,
+            "Reformulated RBOB with Either Gasoline Blending Components" => 26,
+            "Fuel Ethanol" => 27,
+            "Asphalt and Road Oil" => 28,
+            "Kerosene" => 29,
+            "Other Oils (Excluding Fuel Ethanol)" => 30,
+            "Residual Fuel Oil" => 31,
+            "Unfinished Oils" => 32,
+        );
+
+        $process_arr = array(
+            "SAE" => 1,
+            "SAS" => 2,
+            "SAX" => 3,
+            "SAXL" => 4,
+            "SAXP" => 5,
+            "SKA" => 6,
+            "SKB" => 7,
+        );
+
+        $process_name_arr = array(
+            "Ending Stocks" => 1,
+            "Ending Stocks SPR" => 2,
+            "Ending Stocks Excluding SPR" => 3,
+            "Ending Stocks Excluding SPR and Lease" => 4,
+            "Ending Stocks Excluding Propylene at Terminal" => 5,
+            "Stocks In Transit (on Ships) from Alaska)" => 6,
+            "Stocks at Bulk Terminal" => 7,
+        );
+
+        $series_arr = array(
+            "W_EPC0_SAX_NUS_MBBL" => 1,
+            "W_EPC0_SAX_R10_MBBL" => 2,
+            "W_EPC0_SAX_R20_MBBL"   => 3,
+            "W_EPC0_SAX_R30_MBBL" => 4,
+            "W_EPC0_SAX_R40_MBBL" => 5,
+            "W_EPC0_SAX_R50_MBBL" => 6,
+            "W_EPC0_SAX_YCUOK_MBBL" => 7,
+            "W_EPC0_SKA_NUS_MBBL" => 8,
+            "W_EPL0XP_SAE_NUS_MBBL" => 9,
+            "W_EPLLPZ_SAE_NUS_MBBL"  => 10,
+            "W_EPLLPZ_SAE_R10_MBBL"  => 11,
+            "W_EPLLPZ_SAE_R1X_MBBL" => 12,
+            "W_EPLLPZ_SAE_R1Y_MBBL" => 13,
+            "W_EPLLPZ_SAE_R1Z_MBBL" => 14,
+            "W_EPLLPZ_SAE_R20_MBBL" => 15,
+            "W_EPLLPZ_SAE_R30_MBBL" => 16,
+            "W_EPLLPZ_SAE_R4N5_MBBL"    => 17,
+            "W_EPM0CAG55_SAE_NUS_MBBL"  => 18,
+            "W_EPM0CAG55_SAE_R10_MBBL"  => 19,
+            "W_EPM0CAG55_SAE_R20_MBBL"  => 20,
+            "W_EPM0CAG55_SAE_R30_MBBL"  => 21,
+            "W_EPM0CAG55_SAE_R40_MBBL"  => 22,
+            "W_EPM0CAG55_SAE_R50_MBBL"  => 23,
+            "W_EPM0F_SAE_R10_MBBL"  => 24,
+            "W_EPM0F_SAE_R20_MBBL"  => 25,
+            "W_EPM0F_SAE_R30_MBBL"  => 26,
+            "W_EPM0F_SAE_R40_MBBL"  => 27,
+            "W_EPM0F_SAE_R50_MBBL"  => 28,
+            "W_EPOBGRR_SAE_NUS_MBBL"    => 29,
+            "W_EPOBGRR_SAE_R10_MBBL" => 30,
+            "W_EPOBGRR_SAE_R20_MBBL"    => 31,
+            "W_EPOBGRR_SAE_R30_MBBL" => 32,
+            "W_EPOBGRR_SAE_R40_MBBL"    => 33,
+            "W_EPOBGRR_SAE_R50_MBBL" => 34,
+            "W_EPOOXE_SAE_NUS_MBBL" => 35,
+            "W_EPOOXE_SAE_R10_MBBL" => 36,
+            "W_EPOOXE_SAE_R20_MBBL" => 37,
+            "W_EPOOXE_SAE_R30_MBBL" => 38,
+            "W_EPOOXE_SAE_R40_MBBL" => 39,
+            "W_EPOOXE_SAE_R50_MBBL" => 40,
+            "W_EPPA_SAE_NUS_MBBL"   => 41,
+            "W_EPPK_SAE_NUS_MBBL"   => 42,
+            "W_EPPO6_SAE_NUS_MBBL"  => 43,
+            "WBCST_R10_1" => 44,
+            "WBCST_R20_1"   => 45,
+            "WBCST_R30_1"   => 46,
+            "WBCST_R40_1" => 47,
+            "WBCST_R50_1"   => 48,
+            "WBCSTUS1" => 49,
+            "WCESTP11"  => 50,
+        );
+
+## API fresh data.
+2022-07-01 R1Y PADD 1B EPM0 Total Gasoline SAE Ending Stocks WGTST1B1 Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels) 24525 MBBL
+2022-07-01 R20 PADD 2 EPM0C Conventional Motor Gasoline SAE Ending Stocks WG4ST_R20_1 Midwest (PADD 2) Ending Stocks of Conventional Motor Gasoline (Thousand Barrels) 4503 MBBL
+2022-06-01 R1Y PADD 1B EPM0 Total Gasoline SAE Ending Stocks WGTST1B1 Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels) 31255 MBBL
+2022-06-01 R20 PADD 2 EPM0C Conventional Motor Gasoline SAE Ending Stocks WG4ST_R20_1 Midwest (PADD 2) Ending Stocks of Conventional Motor Gasoline (Thousand Barrels) 5383 MBBL
+2022-05-01 R1Y PADD 1B EPM0 Total Gasoline SAE Ending Stocks WGTST1B1 Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels) 32351 MBBL
+2022-05-01 R20 PADD 2 EPM0C Conventional Motor Gasoline SAE Ending Stocks WG4ST_R20_1 Midwest (PADD 2) Ending Stocks of Conventional Motor Gasoline (Thousand Barrels) 6754 MBBL
+
+
+## insert test data sql.
+INSERT INTO oildatas (period ,duoarea , `area_name` ,product ,`product_name` ,process ,`process_name` , series, `series_description`, value,units) VALUES ('2022-07-01', 'R1Y', 'PADD 1B', 'EPM0' ,  'Total Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WGTST1B1' ,  'Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels)' , 24525,  'MBBL' )
+INSERT INTO oildatas ( period ,  duoarea ,   `area_name` ,  product ,  `product_name` ,  process ,  `process_name` ,  series ,  `series_description`,  value ,  units ) VALUES ( '2022-06-01' ,  'R1Y' ,  'PADD 1B' ,  'EPM0' ,  'Total Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WGTST1B1' ,  'Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels)' , 31255,  'MBBL' )
+INSERT INTO oildatas ( period ,  duoarea ,  `area_name` ,  product , `product_name` ,  process , `process_name` ,  series ,  `series_description` ,  value ,  units ) VALUES ( '2022-07-01' ,  'R20' ,  'PADD 2' ,  'EPM0C' ,  'Conventional Motor Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WG4ST_R20_1' ,  'Midwest (PADD 2) Ending Stocks of Conventional Motor Gasoline (Thousand Barrels)' , 4503,  'MBBL')
+INSERT INTO oildatas ( period ,  duoarea ,   `area_name` ,  product ,  `product_name` ,  process ,  `process_name` ,  series ,  `series_description`,  value ,  units ) VALUES ( '2022-06-01' ,  'R20' ,  'PADD 2' ,  'EPM0C' ,  'Conventional Motor Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WG4ST_R20_1' ,  'Midwest (PADD 2) Ending Stocks of Conventional Motor Gasoline (Thousand Barrels)' , 5383,  'MBBL' )
+INSERT INTO oildatas ( period ,  duoarea ,   `area_name` ,  product ,  `product_name` ,  process ,  `process_name` ,  series ,  `series_description`,  value ,  units ) VALUES ( '2022-05-01' ,  'R1Y' ,  'PADD 1B' ,  'EPM0' ,  'Total Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WGTST1B1' ,  'Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels)' , 32351,  'MBBL' )
+INSERT INTO oildatas ( period ,  duoarea ,   `area_name` ,  product ,  `product_name` ,  process ,  `process_name` ,  series ,  `series_description`,  value ,  units ) VALUES ( '2022-05-01' ,  'R20' ,  'PADD 2' ,  'EPM0C' ,  'Conventional Motor Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WG4ST_R20_1' ,  'Midwest (PADD 2) Ending Stocks of Conventional Motor Gasoline (Thousand Barrel)' , 6754,  'MBBL' )
+
+# delete defalut 
+ALTER TABLE oildatas ALTER COLUMN period DROP DEFAULT;
+
+# delete extra
+ALTER TABLE oildatas
+     CHANGE period
+            period TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+ALTER TABLE oildatas MODIFY period TEXT AFTER id;
+
+ALTER TABLE oildatas MODIFY period TIMESTAMP NOT NULL;
+
+
+INSERT INTO oildatas VALUES ('2022-07-01', 'R1Y', 'PADD 1B', 'EPM0' ,  'Total Gasoline' ,  'SAE' ,  'Ending Stocks' ,  'WGTST1B1' ,  'Central Atlantic (PADD 1B) Ending Stocks of Total Gasoline (Thousand Barrels)' , 24525,  'MBBL' )
+
+
+## change column name
+ALTER TABLE oildatas CHANGE `area_name` area_name varchar(255);
+ALTER TABLE oildatas CHANGE `product_name` product_name varchar(255);
+ALTER TABLE oildatas CHANGE `process_name` process_name varchar(255);
+ALTER TABLE oildatas CHANGE `series_description` series_description varchar(255);
