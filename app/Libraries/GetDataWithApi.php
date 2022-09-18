@@ -25,7 +25,7 @@ class GetDataWithApi
     {
 
         // set up api
-        $apikey = 'VIUaL9u7clkQhKV5au3WxZqzUIOnATteAvgQxh3r';
+        $apikey = $_ENV['EIA_API_KEY'];
         /*
         $apiroute = 'petroleum';
         $apiv1 = 'stoc';

@@ -15,6 +15,7 @@ $ npm run dev
 各ディレクトリ・ファイルの権限をアパッチからアクセスできるようにグループを持ったrootからユーザに変更すること
 
 
+
 ## 開発環境
 * php 7.3
 * laravel
@@ -63,3 +64,12 @@ https://www.eia.gov/opendata/documentation.php
 ## database table
 * ending stocks
 * period duoarea area-name product product-name process process-name series series-description value units
+
+
+## デプロイ時の問題
+
+###ext-dom 問題
+$ sudo apt install php-xml
+
+### permision
+storege を読み書き可能に
