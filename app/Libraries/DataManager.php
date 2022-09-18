@@ -50,8 +50,15 @@ class DataManager
 
     public function insert_new_data($area, $product, $process = '', $is_db = true)
     {
+        /**
+         * 
+         * 値を取得できなかった場合エラーを出してログに書き出す
+         */
+
         // get latest data from db
         $new_data = $this->get_latest_data($area, $product, $process);
+        // 値を取得できなかったらエラー
+
         // print_r($new_data);
         // reform insert data in db
         $result = $this->db->reform_data($new_data);

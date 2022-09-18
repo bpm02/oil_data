@@ -20,7 +20,8 @@ class GetNewDataFromApi extends Command
     /**
      * The name and signature of the console command.
      *
-     * @var string
+     * @var string area 取得するエリア
+     * @var string product 取得する商品
      */
 
 

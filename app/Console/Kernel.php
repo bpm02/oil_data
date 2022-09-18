@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        // 実行されてる？
         $schedule->command('api:new_data R10 EPC0 SAX')->daily();
         $schedule->command('api:new_data R20 EPC0 SAX')->daily();
         $schedule->command('api:new_data R30 EPC0 SAX')->daily();
@@ -34,6 +35,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('api:new_data R30 EPM0 SAE')->daily();
         $schedule->command('api:new_data R40 EPM0 SAE')->daily();
         $schedule->command('api:new_data R50 EPM0 SAE')->daily();
+
+        logger('done suchedule!');
     }
 
     /**
