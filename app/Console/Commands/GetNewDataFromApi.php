@@ -25,7 +25,7 @@ class GetNewDataFromApi extends Command
      */
 
 
-    protected $signature = 'api:new_data {area} {product}';
+    protected $signature = 'api:new_data {area} {product} {process}';
 
     /**
      * The console command description.
@@ -65,7 +65,7 @@ class GetNewDataFromApi extends Command
     {
         // 実行プログラム
 
-        $result = $this->dm->insert_new_data($this->argument('area'), $this->argument('product'), false);
+        $result = $this->dm->insert_new_data($this->argument('area'), $this->argument('product'), $this->argument('process'));
         // print_r($result);
 
 /*
