@@ -13,7 +13,7 @@ import {
 
 import Grid from '@material-ui/core/Grid'
 
-import DisplayList from "./listLoop";
+// import DisplayList from "./listLoop";
 import DisplayChart from "./DisplayChart";
 
 const productName: { [key: string]: string } = {
@@ -109,7 +109,7 @@ const Stocks = () => {
                         <FormGroup className="flex-row">
                             <CheckboxAdapter onChange={onChange} label="PADD1" setState={setlabel1} />
                             <CheckboxAdapter onChange={onChange} label="PADD2" setState={setlabel2} />
-                            <CheckboxAdapter onChange={onChange} label="PADD3" setState={setlabel3} checked={true} />
+                            <CheckboxAdapter onChange={onChange} label="PADD3" setState={setlabel3} />
                             <CheckboxAdapter onChange={onChange} label="PADD4" setState={setlabel4} />
                             <CheckboxAdapter onChange={onChange} label="PADD5" setState={setlabel5} />
                         </FormGroup>
@@ -180,6 +180,12 @@ const CalculateDate = (subYear: number): string => {
 }
 
 const CheckboxAdapter = (props: any) => (
+    /**
+     * すでに同じデータがあるったら
+     * ステートのデータをそのまま表示
+     * 一番古い値のperiodを取得して再取得する必要があるか判定
+     * 
+     */
     <FormControlLabel
         control={<Checkbox onChange={e => props.onChange(e.target.checked, props.label, props.setState)} />}
         label={props.label}
@@ -202,8 +208,13 @@ const IsChart = (props: any) => {
 }
 
 
-
-// 取得したデータが届いたのを確認して表示する
+/**
+ * 取得したデータが届いたのを確認して表示する
+ * @param {Date} props.period 商品の日付
+ * @param {String} props.area 商品のエリア
+ * @param {String} props.product 商品の日付
+ * @returns {number} 商品の値データ
+ */
 const ValidateAndDisplayChart = (props: any) => {
 
     let stocks: any;
@@ -226,7 +237,7 @@ const ValidateAndDisplayChart = (props: any) => {
     let area: string = "";
     let product: string = "";
     let series: string = "";
-    // let when_period: string = "2022-06-01"; // 出力するデータをいつまでにするか？
+
 
     let InsertData = () => {
         stocks.map((item: any) => {
