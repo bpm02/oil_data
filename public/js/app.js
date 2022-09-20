@@ -44454,11 +44454,8 @@ var translateName = function translateName($arg) {
   return result;
 };
 /**
- *
- * @returns
- * displaycahrtに複数のデータを渡せば一つのグラフに複数のデータを表示可能
- *
- *
+ * 原油の在庫データの取得、処理を行いHTMLで表示する
+ * @returns {JSX.Element} データ表示にまつわるUI,チャートを表示
  */
 
 
@@ -44545,7 +44542,7 @@ var Stocks = function Stocks() {
       period = _ref32[0],
       setPeriod = _ref32[1];
 
-  var onChange = function onChange(event, label, setState) {
+  var onChange = function onChange(event, setState) {
     setState(event); // console.log(` label ${label} evnet ${event}`);
   };
 
@@ -44789,33 +44786,32 @@ var CalculateDate = function CalculateDate(subYear) {
 
   return result;
 };
+/**
+ * すでに同じデータがあるったら
+ * ステートのデータをそのまま表示
+ * 一番古い値のperiodを取得して再取得する必要があるか判定
+ *
+ */
+
 
 var CheckboxAdapter = function CheckboxAdapter(props) {
-  return (
-    /**
-     * すでに同じデータがあるったら
-     * ステートのデータをそのまま表示
-     * 一番古い値のperiodを取得して再取得する必要があるか判定
-     *
-     */
-    (0, jsx_runtime_1.jsx)(core_1.FormControlLabel, {
-      control: (0, jsx_runtime_1.jsx)(core_1.Checkbox, {
-        onChange: function onChange(e) {
-          return props.onChange(e.target.checked, props.label, props.setState);
-        }
-      }),
-      label: props.label
-    })
-  );
+  return (0, jsx_runtime_1.jsx)(core_1.FormControlLabel, {
+    control: (0, jsx_runtime_1.jsx)(core_1.Checkbox, {
+      onChange: function onChange(e) {
+        return props.onChange(e.target.checked, props.label, props.setState);
+      }
+    }),
+    label: props.label
+  });
 };
 /**
  * displayが正ならチャート表示
- * @param {Boolean} props.display
- * @param {String} props.label
- * @param {String} props.area
- * @param {String} props.product
- * @param {Date} props.period
- * @returns {JSX} 商品データをチャート表示
+ * @param {boolean} props.display
+ * @param {string} props.label
+ * @param {string} props.area
+ * @param {string} props.product
+ * @param {string} props.period
+ * @returns {JSX.Element} 商品データをチャート表示
  */
 
 
@@ -44831,10 +44827,11 @@ var IsChart = function IsChart(props) {
 };
 /**
  * APIを叩いてデータ取得してチャート表示する
+ * @param {Boolan} props.display 表示するしない
  * @param {Date} props.period 商品の日付
  * @param {String} props.area 商品のエリア
  * @param {String} props.product 商品の日付
- * @returns {JSX} 商品データをチャート表示
+ * @returns {JSX.Element} 商品データをチャート表示
  */
 
 

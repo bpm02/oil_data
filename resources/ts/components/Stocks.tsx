@@ -1,6 +1,6 @@
 import useAxios from "../hooks/useAxios";
 import axios from '../apis/oilStocks';
-import { JSXElementConstructor, useState } from 'react';
+import { useState } from 'react';
 import {
     FormControl,
     FormGroup,
@@ -37,46 +37,40 @@ const translateName = ($arg: string): string => {
 }
 
 /**
- * 
- * @returns 
- * displaycahrtに複数のデータを渡せば一つのグラフに複数のデータを表示可能
- * 
- * 
+ * 原油の在庫データの取得、処理を行いHTMLで表示する
+ * @returns {JSX.Element} データ表示にまつわるUI,チャートを表示
  */
 
-const Stocks = () => {
+const Stocks = (): JSX.Element => {
 
-    const [label1, setlabel1] = useState(false)
-    const [label2, setlabel2] = useState(false)
-    const [label3, setlabel3] = useState(false)
-    const [label4, setlabel4] = useState(false)
-    const [label5, setlabel5] = useState(false)
-    const [label6, setlabel6] = useState(false)
-    const [label7, setlabel7] = useState(false)
-    const [label8, setlabel8] = useState(false)
-    const [label9, setlabel9] = useState(false)
-    const [label10, setlabel10] = useState(false)
-    const [label11, setlabel11] = useState(false)
-    const [label12, setlabel12] = useState(false)
-    const [label13, setlabel13] = useState(false)
-    const [label14, setlabel14] = useState(false)
-    const [label15, setlabel15] = useState(false)
+    const [label1, setlabel1] = useState<boolean>(false)
+    const [label2, setlabel2] = useState<boolean>(false)
+    const [label3, setlabel3] = useState<boolean>(false)
+    const [label4, setlabel4] = useState<boolean>(false)
+    const [label5, setlabel5] = useState<boolean>(false)
+    const [label6, setlabel6] = useState<boolean>(false)
+    const [label7, setlabel7] = useState<boolean>(false)
+    const [label8, setlabel8] = useState<boolean>(false)
+    const [label9, setlabel9] = useState<boolean>(false)
+    const [label10, setlabel10] = useState<boolean>(false)
+    const [label11, setlabel11] = useState<boolean>(false)
+    const [label12, setlabel12] = useState<boolean>(false)
+    const [label13, setlabel13] = useState<boolean>(false)
+    const [label14, setlabel14] = useState<boolean>(false)
+    const [label15, setlabel15] = useState<boolean>(false)
     const defalutPeriod: string = CalculateDate(2);
-    const [period, setPeriod] = useState(defalutPeriod)
+    const [period, setPeriod] = useState<string>(defalutPeriod)
 
 
-    const onChange = (event: boolean, setState: any) => {
+    const onChange = (event: boolean, setState: any): void => {
         setState(event)
         // console.log(` label ${label} evnet ${event}`);
     }
-
-
 
     const RadioHandleChange = (e: any): void => {
         setPeriod(e.target.value)
         // console.log(`period change ${e.target.value}`)
     }
-
 
     return (
         <div>
@@ -159,7 +153,6 @@ const Stocks = () => {
                     </Grid>
                 </FormControl>
 
-
             </Grid>
 
         </div>
@@ -179,13 +172,20 @@ const CalculateDate = (subYear: number): string => {
     return result;
 }
 
-const CheckboxAdapter = (props: any) => (
-    /**
-     * すでに同じデータがあるったら
-     * ステートのデータをそのまま表示
-     * 一番古い値のperiodを取得して再取得する必要があるか判定
-     * 
-     */
+interface CheckboxAdapterProps {
+    onChange: any;
+    label: string;
+    setState: any;
+}
+
+/**
+ * すでに同じデータがあるったら
+ * ステートのデータをそのまま表示
+ * 一番古い値のperiodを取得して再取得する必要があるか判定
+ * 
+ */
+const CheckboxAdapter = (props: CheckboxAdapterProps): JSX.Element => (
+
     <FormControlLabel
         control={<Checkbox onChange={e => props.onChange(e.target.checked, props.label, props.setState)} />}
         label={props.label}
