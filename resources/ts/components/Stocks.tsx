@@ -1,6 +1,6 @@
 import useAxios from "../hooks/useAxios";
 import axios from '../apis/oilStocks';
-import { useState } from 'react';
+import { JSXElementConstructor, useState } from 'react';
 import {
     FormControl,
     FormGroup,
@@ -65,14 +65,14 @@ const Stocks = () => {
     const [period, setPeriod] = useState(defalutPeriod)
 
 
-    const onChange = (event: boolean, label: string, setState: any) => {
+    const onChange = (event: boolean, setState: any) => {
         setState(event)
         // console.log(` label ${label} evnet ${event}`);
     }
 
 
 
-    const RadioHandleChange = (e: any) => {
+    const RadioHandleChange = (e: any): void => {
         setPeriod(e.target.value)
         // console.log(`period change ${e.target.value}`)
     }
@@ -192,30 +192,49 @@ const CheckboxAdapter = (props: any) => (
     />
 )
 
-
-// 正ならチャート表示
-const IsChart = (props: any) => {
+interface IsChartProps {
+    display: boolean;
+    area: string;
+    product: string;
+    period: string;
+}
+/**
+ * displayが正ならチャート表示
+ * @param {boolean} props.display
+ * @param {string} props.label
+ * @param {string} props.area
+ * @param {string} props.product
+ * @param {string} props.period
+ * @returns {JSX.Element} 商品データをチャート表示
+ */
+const IsChart = (props: IsChartProps): JSX.Element => {
     return (
         <>
             {
                 props.display &&
-                <ValidateAndDisplayChart display={props.display} label={props.label} area={props.area} product={props.product} period={props.period} />
-
+                <GetApiAndDisplayChart display={props.display} area={props.area} product={props.product} period={props.period} />
             }
         </>
     );
 
 }
 
+interface GetApiAndDisplayChartProps {
+    display: boolean;
+    area: string;
+    period: string;
+    product: string;
+}
 
 /**
- * 取得したデータが届いたのを確認して表示する
+ * APIを叩いてデータ取得してチャート表示する
+ * @param {Boolan} props.display 表示するしない
  * @param {Date} props.period 商品の日付
  * @param {String} props.area 商品のエリア
  * @param {String} props.product 商品の日付
- * @returns {number} 商品の値データ
+ * @returns {JSX.Element} 商品データをチャート表示
  */
-const ValidateAndDisplayChart = (props: any) => {
+const GetApiAndDisplayChart = (props: GetApiAndDisplayChartProps): JSX.Element => {
 
     let stocks: any;
     let error: any;
@@ -224,12 +243,12 @@ const ValidateAndDisplayChart = (props: any) => {
         props.period = '2000-01-01';
     }
 
+    // すでにstateにデータがあるか確認する
     [stocks, error, loading] = useAxios({
         axiosInstance: axios,
         method: 'GET',
         url: '/stocks/' + props.area + '/' + props.product + '/' + props.period,
     });
-
 
 
     let data: number[] = [];

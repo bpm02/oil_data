@@ -44428,7 +44428,8 @@ var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var core_1 = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 
-var Grid_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js"));
+var Grid_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js")); // import DisplayList from "./listLoop";
+
 
 var DisplayChart_1 = __importDefault(__webpack_require__(/*! ./DisplayChart */ "./resources/ts/components/DisplayChart.tsx"));
 
@@ -44620,8 +44621,7 @@ var Stocks = function Stocks() {
             }), (0, jsx_runtime_1.jsx)(CheckboxAdapter, {
               onChange: onChange,
               label: "PADD3",
-              setState: setlabel3,
-              checked: true
+              setState: setlabel3
             }), (0, jsx_runtime_1.jsx)(CheckboxAdapter, {
               onChange: onChange,
               label: "PADD4",
@@ -44791,38 +44791,62 @@ var CalculateDate = function CalculateDate(subYear) {
 };
 
 var CheckboxAdapter = function CheckboxAdapter(props) {
-  return (0, jsx_runtime_1.jsx)(core_1.FormControlLabel, {
-    control: (0, jsx_runtime_1.jsx)(core_1.Checkbox, {
-      onChange: function onChange(e) {
-        return props.onChange(e.target.checked, props.label, props.setState);
-      }
-    }),
-    label: props.label
-  });
-}; // 正ならチャート表示
+  return (
+    /**
+     * すでに同じデータがあるったら
+     * ステートのデータをそのまま表示
+     * 一番古い値のperiodを取得して再取得する必要があるか判定
+     *
+     */
+    (0, jsx_runtime_1.jsx)(core_1.FormControlLabel, {
+      control: (0, jsx_runtime_1.jsx)(core_1.Checkbox, {
+        onChange: function onChange(e) {
+          return props.onChange(e.target.checked, props.label, props.setState);
+        }
+      }),
+      label: props.label
+    })
+  );
+};
+/**
+ * displayが正ならチャート表示
+ * @param {Boolean} props.display
+ * @param {String} props.label
+ * @param {String} props.area
+ * @param {String} props.product
+ * @param {Date} props.period
+ * @returns {JSX} 商品データをチャート表示
+ */
 
 
 var IsChart = function IsChart(props) {
   return (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, {
-    children: props.display && (0, jsx_runtime_1.jsx)(ValidateAndDisplayChart, {
+    children: props.display && (0, jsx_runtime_1.jsx)(GetApiAndDisplayChart, {
       display: props.display,
-      label: props.label,
       area: props.area,
       product: props.product,
       period: props.period
     })
   });
-}; // 取得したデータが届いたのを確認して表示する
+};
+/**
+ * APIを叩いてデータ取得してチャート表示する
+ * @param {Date} props.period 商品の日付
+ * @param {String} props.area 商品のエリア
+ * @param {String} props.product 商品の日付
+ * @returns {JSX} 商品データをチャート表示
+ */
 
 
-var ValidateAndDisplayChart = function ValidateAndDisplayChart(props) {
+var GetApiAndDisplayChart = function GetApiAndDisplayChart(props) {
   var stocks;
   var error;
   var loading;
 
   if (props.period == null) {
     props.period = '2000-01-01';
-  }
+  } // すでにstateにデータがあるか確認する
+
 
   var _ref33 = (0, useAxios_1["default"])({
     axiosInstance: oilStocks_1["default"],
@@ -44839,7 +44863,7 @@ var ValidateAndDisplayChart = function ValidateAndDisplayChart(props) {
   var period = [];
   var area = "";
   var product = "";
-  var series = ""; // let when_period: string = "2022-06-01"; // 出力するデータをいつまでにするか？
+  var series = "";
 
   var InsertData = function InsertData() {
     stocks.map(function (item) {
